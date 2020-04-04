@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <h1>{{ album.title }}</h1>
+    <ul>
+    {% for photograph in album.photograph_set.all %}
+        <li>{{ photograph.name }}</li>
+        <img src="/{{photograph.photo}}" alt="Album Image" /> 
+    {% endfor %}
+    </ul>
+  </body>
+</html>

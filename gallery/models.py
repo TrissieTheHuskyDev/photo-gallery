@@ -12,7 +12,7 @@ class Album(models.Model):
 class Photograph(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    photo = models.ImageField(upload_to='photos', default = 'photos/1200px-No_image_available.svg.png')
+    photo = models.ImageField(upload_to='photos/', default = 'photos/1200px-No_image_available.svg.png')
     description = models.TextField(max_length=1024)
     creation_date = models.DateField('date created')
 
