@@ -8,8 +8,12 @@
     <h1>{{ album.title }}</h1>
     <ul>
     {% for photograph in album.photograph_set.all %}
-        <li>{{ photograph.name }}</li>
-        <img src="/{{photograph.photo}}" alt="Album Image" /> 
+        <li>Name: {{ photograph.name }}</li>
+        <li>Description: {{ photograph.description }}</li>
+        <li>Created: {{ photograph.creation_date }}</li>
+
+        <li><img src="/{{photograph.photo}}" alt="Album Image" height="280" width="420"/></li>
+        <br>
     {% endfor %}
     </ul>
   </body>
