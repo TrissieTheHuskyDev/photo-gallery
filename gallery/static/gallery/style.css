@@ -1,3 +1,24 @@
+.container {
+  position: relative;
+}
+
 li {
-    list-style: none;
+  list-style: none;
+}
+
+.image_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_detail {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s, visibility .2s;
+}
+
+.image_wrap:hover .image_detail {
+  visibility: visible;
+  opacity: 1;
 }

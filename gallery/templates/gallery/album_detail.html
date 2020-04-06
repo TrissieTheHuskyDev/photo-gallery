@@ -9,24 +9,32 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom CSS -->
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'gallery/style.css' %}">
   </head>
   <body>
     <div class="container">
+      <!-- Album Title -->
       <header>
         <h1>{{ album.title }}</h1>
       </header>
-      <ul>
-      {% for photograph in album.photograph_set.all %}
-          <li>Name: {{ photograph.name }}</li>
-          <li>Description: {{ photograph.description }}</li>
-          <li>Created: {{ photograph.creation_date }}</li>
 
-          <li><img src="/{{photograph.photo}}" alt="Album Image" height="280" width="420"/></li>
+      <!-- Album Images -->
+      <ul class="images_container">
+      {% for photograph in album.photograph_set.all %}
+        <li class="image_wrap">
+          <div class="image_detail">
+            <p>Name: {{ photograph.name }}</p>
+            <p>Description: {{ photograph.description }}</p>
+            <p>Created: {{ photograph.creation_date }}</p>
+          </div>
+          <img class="image" src="/{{photograph.photo}}" alt="Album Image"  height="280" width="420"/>
+        </li>
           <br>
       {% endfor %}
       </ul>
+
     </div>
 
 
