@@ -21,17 +21,17 @@
       </header>
 
       <!-- Album Images -->
-      <ul class="images_container">
+      <ul id="images_container">
       {% for photograph in album.photograph_set.all %}
-        <li class="image_wrap">
+        <li class="thumbnail">
           <div class="image_detail">
-            <p>Name: {{ photograph.name }}</p>
+            <h4>{{ photograph.name }}</h4>
             <p>Description: {{ photograph.description }}</p>
-            <p>Created: {{ photograph.creation_date }}</p>
+            <p>Taken: {{ photograph.creation_date }}</p>
           </div>
           <img class="image" src="/{{photograph.photo}}" alt="Album Image"  height="280" width="420"/>
         </li>
-          <br>
+        <br>
       {% endfor %}
       </ul>
 
