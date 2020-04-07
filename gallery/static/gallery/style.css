@@ -15,37 +15,55 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  /* flex:1; */
 }
 .container-fluid {
   flex: 1;    /* same as flex-grow: 1; */
+  margin:0;
 }
 
 .row {
-  display: flex;
-  flex-direction: column;
-}
-.navigation {
   flex:1;
+}
+a:visited,  a:link,  a:active {
+  text-decoration: none;
 }
 nav{
   background: #1d1d1d;
+  padding: 8px;;
 }
-nav a:visited, a:link, a:active
-{
-  color: white;
-  text-decoration: none;
+.nav{
+  padding: 1rem;
 }
-nav a:hover{
-  color: #ED6A5A;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgb(235, 150, 139), 0 0 5px rgb(218, 88, 71);
+.navbar-brand{
+  margin: 0;
+  padding:1rem;
 }
 .navbar-brand img{
   border-radius: 15%;
 }
-
-.main-content {
-  flex:1;
+.nav-item a:visited, .nav-item a:link, .nav-item a:active
+{
+  color: white;
+  text-decoration: none;
 }
+.nav-item a:hover{
+  color: #ED6A5A;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(235, 150, 139), 0 0 5px rgb(218, 88, 71);
+}
+.breadcrumb {
+  background: none;
+  margin: 0;
+}
+.breadcrumb-item a:visited, .breadcrumb-item a:link, .breadcrumb-item a:active {
+  color: #1d1d1d;
+  text-decoration: none;
+}
+.breadcrumb-item a:hover{
+  color: #ED6A5A;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(235, 150, 139), 0 0 5px rgb(218, 88, 71); 
+}
+
 
 header {
   display: flex;
@@ -57,6 +75,11 @@ header {
 article {
   background: #F8C9BE;
 }
+article nav{
+  background: none;
+  margin: 0;
+}
+
 
 footer {
   display: flex;

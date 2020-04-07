@@ -19,32 +19,34 @@
   </head>
   <body>
    
-    <!-- <div class="wrapper container-fluid"> -->
+    <div class=" container-fluid">
 
       <!-- NAVBAR -->
-      <div class="row navigation">
+      <div class="row ">
         <nav class=" navbar container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="{% static 'images/irie_images_logo.png' %}" width="100" height="70" alt="">
-          </a>
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Buy Prints</a>
-            </li>
-          </ul>
+          <section class="container-fluid">
+            <a class="navbar-brand" href="{% url 'gallery:index' %}">
+              <img src="{% static 'images/irie_images_logo.png' %}" width="100" height="70" alt="">
+            </a>
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Buy Prints</a>
+              </li>
+            </ul>
+          </section>
         </nav>
       </div>
       
       <!-- ALBUMS -->
-      <div class="row main-content">
+      <div class="row">
         <article class="container-fluid">
           <header>
             <h1>Albums</h1>
           </header>
-          <section>
+          <section class="container-fluid">
             {% if album_list %}
                 <ul id="images_container">
                 {% for album in album_list %}
@@ -63,7 +65,7 @@
             {% else %}
                 <p>No albums are available.</p>
             {% endif %}
-        </section>
+          </section>
         </article>
       </div>
 
@@ -87,7 +89,7 @@
         </footer>
       </div>
 
-    <!-- </div> -->
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -19,27 +19,44 @@
     <script src="https://kit.fontawesome.com/f25d61f966.js" crossorigin="anonymous"></script>   
   </head>
   <body>
-    <!-- <div class="wrapper container-fluid"> -->
+    <div class=" container-fluid">
 
-      <!-- BREADCRUMBS -->
-      <div class="row navigation">
-        <nav aria-label="navbar breadcrumb container-fluid">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'gallery:index' %}">Albums</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ album.title }}</li>
-          </ol>
+      <!-- NAVBAR -->
+      <div class="row ">
+        <nav class="navbar container-fluid">
+          <section class="container-fluid">
+            <a class="navbar-brand" href="{% url 'gallery:index' %}">
+              <img src="{% static 'images/irie_images_logo.png' %}" width="100" height="70" alt="">
+            </a>
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Buy Prints</a>
+              </li>
+            </ul>
+          </section>
         </nav>
       </div>
+
+
 
       
 
       <!-- ALBUM IMAGES -->
-      <div class="row main-content">
+      <div class="row">
         <article class="container-fluid">
+          <nav   aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'gallery:index' %}">Albums</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ album.title }}</li>
+            </ol>
+          </nav>
           <header>
             <h1>{{album.title}}</h1>
           </header>
-          <section>
+          <section class="container-fluid">
             <ul id="images_container">
               {% for photograph in album.photograph_set.all %}
               <li>
@@ -82,7 +99,7 @@
         </footer>
       </div>
 
-    <!-- </div> -->
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
