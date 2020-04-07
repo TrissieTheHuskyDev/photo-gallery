@@ -1,11 +1,23 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
+/* .container */
+body {
+  background: rgb(255, 249, 250);
+  font-family: 'Elsie', cursive;
+
+}
+nav{
+  background: #1d1d1d;
+}
 nav a:hover, a:visited, a:link, a:active
 {
-  color: black;
+  color: white;
   text-decoration: none;
+}
+.navbar-brand img{
+  border-radius: 15%;
 }
 
 header {
@@ -15,11 +27,17 @@ header {
   padding: 20px;
 }
 
+article {
+  background: #F8C9BE;
+}
+
 footer {
   display: flex;
   justify-content: left;
   align-items: center;
   padding: 20px;
+  background: #1d1d1d;
+  color:white;
 }
 
 
@@ -47,14 +65,13 @@ ul{
   width: 420px;
   height: 280px;
   padding: 24px;
-  margin: 5px;
+  margin: 10px;
   background: #ffffff;
   position: relative;
   display: flex;
   align-items: flex-end;
   transition: .6s ease-out;
   box-shadow: 0 10px 10px rgba(0,0,0,0.5);
-
 }
 .thumbnail:hover {
   transform: translateY(15px);

@@ -12,6 +12,8 @@
     <!-- Custom CSS -->
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'gallery/style.css' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap" rel="stylesheet">  
   </head>
   <body>
     <div class="container">
@@ -30,7 +32,7 @@
 
       <!-- Album Images -->
       <ul id="images_container">
-      {% for photograph in album.photograph_set.all %}
+        {% for photograph in album.photograph_set.all %}
         <a href="{% url 'gallery:photo_detail' album.id photograph.id %}">
           <li class="thumbnail">
             <div class="image_detail">
@@ -42,8 +44,8 @@
           </li>
         </a>
         <br>
-      {% endfor %}
-      <li></li>
+        {% endfor %}
+        <li></li>
       </ul>
 
     </div>
