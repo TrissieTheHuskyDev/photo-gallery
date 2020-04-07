@@ -13,11 +13,13 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'gallery/style.css' %}">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap" rel="stylesheet"> 
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/f25d61f966.js" crossorigin="anonymous"></script> 
   </head>
   <body>
    
-    <div class="container-fluid">
+    <div class="wrapper container-fluid">
 
       <!-- NAVBAR -->
       <div class="row">
@@ -48,33 +50,48 @@
           <header>
             <h1>Albums</h1>
           </header>
-          {% if album_list %}
-              <ul id="images_container">
-              {% for album in album_list %}
-                  <a href="{% url 'gallery:album_detail' album.id %}">
-                    <li class="thumbnail">
-                      <div class="image_detail">
-                        <h4>{{ album.title }}</h4>
-                      </div>
-                      <img class="image" src="/{{album.thumbnail}}" alt="Album Thumbnail"  />
-                    </li>
-                  </a>
-                  <br>
-              {% endfor %}
-              <li></li>
-              </ul>
-          {% else %}
-              <p>No albums are available.</p>
-          {% endif %}
+          <section>
+            {% if album_list %}
+                <ul id="images_container">
+                {% for album in album_list %}
+                    <a href="{% url 'gallery:album_detail' album.id %}">
+                      <li class="thumbnail">
+                        <div class="image_detail">
+                          <h4>{{ album.title }}</h4>
+                        </div>
+                        <img class="image" src="/{{album.thumbnail}}" alt="Album Thumbnail"  />
+                      </li>
+                    </a>
+                    <br>
+                {% endfor %}
+                <li></li>
+                </ul>
+            {% else %}
+                <p>No albums are available.</p>
+            {% endif %}
+        </section>
         </article>
       </div>
 
       <!-- FOOTER -->
       <div class="row">
-        <footer class="container-fluid">
-          <p>irie.io images</p>
-          <p><a href="mailto:ipolo1969@gmail.com">ipolo1969@gmail.com</a></p>
-        </footer>
+        <!-- <div class="container-fluid"> -->
+          <footer class="container-fluid">
+            <section class="ft-main">
+              <div class=ft-item>
+                <p>irie.io images</p>
+                <a href="mailto:ipolo1969@gmail.com" id="email"><p>ipolo1969@gmail.com</p></a>
+              </div>
+              <div class="ft-item ft-social">
+                <ul class="ft-social-list">
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fab fa-github"></i></a></li>
+                  <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+              </div>
+            </section>
+          </footer>
+        <!-- </div> -->
       </div>
 
     </div>
