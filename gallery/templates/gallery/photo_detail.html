@@ -14,44 +14,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'gallery/style.css' %}">
   </head>
   <body>
+   
     <div class="container">
-      <!-- Album Title -->
+        
+        <p>hello</p>
+        <footer class="container">
+          <p>irie.io images</p>
+          <a href="mailto:ipolo1969@gmail.com">ipolo1969@gmail.com</a>
+        </footer>
       
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{% url 'gallery:index' %}">Albums</a></li>
-          <li class="breadcrumb-item active" aria-current="page">{{ album.title }}</li>
-        </ol>
-      </nav>
-
-      <header>
-        <h1>{{album.title}}</h1>
-      </header>
-
-      <!-- Album Images -->
-      <ul id="images_container">
-      {% for photograph in album.photograph_set.all %}
-        <a href="{% url 'gallery:photo_detail' album.id photograph.id %}">
-          <li class="thumbnail">
-            <div class="image_detail">
-              <h4>{{ photograph.name }}</h4>
-              <p>Description: {{ photograph.description }}</p>
-              <p>Taken: {{ photograph.creation_date }}</p>
-            </div>
-            <img class="image" src="/{{photograph.photo}}" alt="Album Image" />
-          </li>
-        </a>
-        <br>
-      {% endfor %}
-      <li></li>
-      </ul>
-
     </div>
-
-    <footer class="container footer">
-      <p>irie.io images</p> 
-      <p><a href="mailto:ipolo1969@gmail.com">ipolo1969@gmail.com</a></p>
-    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

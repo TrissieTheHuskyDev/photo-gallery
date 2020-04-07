@@ -40,14 +40,14 @@
           {% if album_list %}
               <ul id="images_container">
               {% for album in album_list %}
-                  <li class="thumbnail">
                   <a href="{% url 'gallery:album_detail' album.id %}">
-                    <div class="image_detail">
-                      <h4>{{ album.title }}</h4>
-                    </div>
-                    <img class="image" src="/{{album.thumbnail}}" alt="Album Thumbnail"  />
+                    <li class="thumbnail">
+                      <div class="image_detail">
+                        <h4>{{ album.title }}</h4>
+                      </div>
+                      <img class="image" src="/{{album.thumbnail}}" alt="Album Thumbnail"  />
+                    </li>
                   </a>
-                  </li>
                   <br>
               {% endfor %}
               <li></li>
