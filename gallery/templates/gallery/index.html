@@ -14,38 +14,32 @@
     <link rel="stylesheet" type="text/css" href="{% static 'gallery/style.css' %}">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap" rel="stylesheet"> 
-    <!-- Place your kit's code here -->
+    <!-- Social Link Icons -->
     <script src="https://kit.fontawesome.com/f25d61f966.js" crossorigin="anonymous"></script> 
   </head>
   <body>
    
-    <div class="wrapper container-fluid">
+    <!-- <div class="wrapper container-fluid"> -->
 
       <!-- NAVBAR -->
-      <div class="row">
+      <div class="row navigation">
         <nav class=" navbar container-fluid">
           <a class="navbar-brand" href="#">
             <img src="{% static 'images/irie_images_logo.png' %}" width="100" height="70" alt="">
           </a>
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Active</a>
+              <a class="nav-link active" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Buy Prints</a>
             </li>
           </ul>
         </nav>
       </div>
       
       <!-- ALBUMS -->
-      <div class="row">
+      <div class="row main-content">
         <article class="container-fluid">
           <header>
             <h1>Albums</h1>
@@ -75,26 +69,25 @@
 
       <!-- FOOTER -->
       <div class="row">
-        <!-- <div class="container-fluid"> -->
-          <footer class="container-fluid">
-            <section class="ft-main">
-              <div class=ft-item>
-                <p>irie.io images</p>
-                <a href="mailto:ipolo1969@gmail.com" id="email"><p>ipolo1969@gmail.com</p></a>
-              </div>
-              <div class="ft-item ft-social">
-                <ul class="ft-social-list">
-                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                  <li><a href="#"><i class="fab fa-github"></i></a></li>
-                  <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                </ul>
-              </div>
-            </section>
-          </footer>
-        <!-- </div> -->
+        <footer class="container-fluid">
+          <section class="ft-main container-fluid">
+            <div class=ft-item>
+              <p>irie.io images</p>
+              <a href="mailto:ipolo1969@gmail.com" id="email"><p>ipolo1969@gmail.com</p></a>
+            </div>
+            <!-- SOCIAL BUTTONS -->
+            <div class="ft-item ft-social">
+              <ul class="ft-social-list">
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </section>
+        </footer>
       </div>
 
-    </div>
+    <!-- </div> -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
