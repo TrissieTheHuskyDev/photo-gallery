@@ -16,8 +16,16 @@
   <body>
     <div class="container">
       <!-- Album Title -->
+      
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'gallery:index' %}">Albums</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ album.title }}</li>
+        </ol>
+      </nav>
+
       <header>
-        <h1>{{ album.title }}</h1>
+        <h1>{{album.title}}</h1>
       </header>
 
       <!-- Album Images -->
@@ -29,7 +37,7 @@
             <p>Description: {{ photograph.description }}</p>
             <p>Taken: {{ photograph.creation_date }}</p>
           </div>
-          <img class="image" src="/{{photograph.photo}}" alt="Album Image"  height="280" width="420"/>
+          <img class="image" src="/{{photograph.photo}}" alt="Album Image" />
         </li>
         <br>
       {% endfor %}
@@ -38,9 +46,9 @@
 
     </div>
 
-    <footer class="container">
-      <p>irie.io images</p>
-      <a href="mailto:ipolo1969@gmail.com">ipolo1969@gmail.com</a>
+    <footer class="container footer">
+      <p>irie.io images</p> <br>
+      <p><a href="mailto:ipolo1969@gmail.com">ipolo1969@gmail.com</a></p>
     </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
