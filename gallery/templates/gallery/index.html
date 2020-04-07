@@ -38,10 +38,19 @@
             <h1>Albums</h1>
           </header>
           {% if album_list %}
-              <ul>
+              <ul id="images_container">
               {% for album in album_list %}
-                  <li><a href="{% url 'gallery:album_detail' album.id %}">{{ album.title }}</a></li>
+                  <li class="thumbnail">
+                  <a href="{% url 'gallery:album_detail' album.id %}">
+                    <div class="image_detail">
+                      <h4>{{ album.title }}</h4>
+                    </div>
+                    <img class="image" src="/{{album.thumbnail}}" alt="Album Thumbnail"  height="280" width="420"/>
+                  </a>
+                  </li>
+                  <br>
               {% endfor %}
+              <li></li>
               </ul>
           {% else %}
               <p>No albums are available.</p>
