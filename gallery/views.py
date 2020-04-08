@@ -14,6 +14,10 @@ def album_detail(request, album_id):
     return render(request, 'gallery/album_detail.html', {'album': album})
 
 def photo_detail(request, album_id, photo_id):
-    photo = get_object_or_404(Photograph, pk = photo_id)
+    start_photo = get_object_or_404(Photograph, pk = photo_id)
     album = get_object_or_404(Album, pk=album_id)
-    return render(request, 'gallery/photo_detail.html', {'photo': photo, 'album':album})
+    photo_list = album.photograph_set.all()
+    return render(request, 'gallery/photo_detail.html', {'start_photo': start_photo, 'album':album, 'photo_list':photo_list})
+
+def about(request):
+    return render(request, 'gallery/about.html')
