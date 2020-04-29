@@ -1,11 +1,11 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
-from . import views, api_views
+from . import views
 
 app_name = 'gallery'
 urlpatterns = [
-    path('api/v1/albums', api_views.AlbumList.as_view()),
-
     # '/gallery/
     path('', views.index, name='index'),
     # '/gallery/1/

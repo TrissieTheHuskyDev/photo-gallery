@@ -11,7 +11,12 @@ def index(request):
 
 def album_detail(request, album_id):
     album = get_object_or_404(Album, pk=album_id)
-    return render(request, 'gallery/album_detail.html', {'album': album})
+    photo_list = album.photograph_set.all()
+    return render(request, 'gallery/album_detail.html', 
+    {
+        'album': album,
+        'photo_list': photo_list,
+    })
 
 def photo_detail(request, album_id, photo_id):
     start_photo = get_object_or_404(Photograph, pk = photo_id)

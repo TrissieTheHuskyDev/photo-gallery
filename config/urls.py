@@ -18,7 +18,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+import gallery.api_views
+
 urlpatterns = [
+    path('api/v1/albums', gallery.api_views.AlbumList.as_view()),
+    path('api/v1/albums/new', gallery.api_views.AlbumCreate.as_view()),
+    path('api/v1/albums/<int:id>/', gallery.api_views.AlbumRetrieveUpdateDestroy.as_view()),
+
+    path('api/v1/photographs', gallery.api_views.PhotographList.as_view()),
+    path('api/v1/photographs/new', gallery.api_views.PhotographCreate.as_view()),
+    path('api/v1/photographs/<int:id>/', gallery.api_views.PhotographRetrieveUpdateDestroy.as_view()),
+
     path('gallery/', include('gallery.urls')),
     path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

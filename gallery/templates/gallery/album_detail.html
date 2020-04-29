@@ -57,24 +57,28 @@
             <h1>{{album.title}}</h1>
           </header>
           <section class="container-fluid">
-            <ul id="images_container">
-              {% for photograph in album.photograph_set.all %}
-              <li>
-                <a href="{% url 'gallery:photo_detail' album.id photograph.id %}">
-                  <div class="thumbnail">
-                    <div class="image_detail">
-                      <h4>{{ photograph.name }}</h4>
-                      <p>Description: {{ photograph.description }}</p>
-                      <p>Taken: {{ photograph.creation_date }}</p>
+            {% if photo_list %}
+              <ul id="images_container">
+                {% for photograph in album.photograph_set.all %}
+                <li>
+                  <a href="{% url 'gallery:photo_detail' album.id photograph.id %}">
+                    <div class="thumbnail">
+                      <div class="image_detail">
+                        <h4>{{ photograph.name }}</h4>
+                        <p>Description: {{ photograph.description }}</p>
+                        <p>Taken: {{ photograph.creation_date }}</p>
+                      </div>
+                      <img class="image" src="/media/{{photograph.photo}}" alt="Album Image" />
                     </div>
-                    <img class="image" src="/{{photograph.photo}}" alt="Album Image" />
-                  </div>
-                </a>
-              </li>
-              <br>
-              {% endfor %}
-              <li></li>
-            </ul>
+                  </a>
+                </li>
+                <br>
+                {% endfor %}
+                <li></li>
+              </ul>
+            {% else %}
+              <p>No photos are available.</p>
+            {% endif %}
           </section>
         </article>
       </div>
