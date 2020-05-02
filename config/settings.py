@@ -11,24 +11,47 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import environ
+
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+env = environ.Env(DEBUG=(bool, False))
+
+# This section added from an update to standards in CookieCutter Django to ensure no errors are encountered at runserver/migrations
+READ_DOT_ENV_FILE = env.bool('DJANGO_READ_DOT_ENV_FILE', default=False)
+if READ_DOT_ENV_FILE:
+    env_file = str(BASE_DIR.path('.env'))
+    print('Loading : {}'.format(env_file))
+    env.read_env(env_file)
+    print('The .env file has been loaded. See base.py for more information')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'i6l&i@7cxjb=62@*yvd5gcj_$^+iyoe2y@wi*4099hft!qr1l7'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
 
 # Application definition
+LOCAL_APPS = [
+    'gallery.apps.GalleryConfig',
+]
+
+OTHER_APPS = [
+    'bootstrap4',
+    'django_filters',
+    'rest_framework',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,11 +60,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gallery.apps.GalleryConfig',
-    'bootstrap4',
-    'django_filters',
-    'rest_framework',
-]
+] + LOCAL_APPS + OTHER_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,10 +99,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'photo_gallery_test',
-        'USER': 'postgres',
-        'PASSWORD': '!1969!a$AP',
-        'HOST': 'localhost'
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'HOST': env('DATABASE_HOST')
     }
 }
 
