@@ -57,7 +57,7 @@
             <h1>{{album.title}}</h1>
           </header>
           <section class="container-fluid">
-            {% if photo_list %}
+            <!-- {% if photo_list %} -->
               <ul id="images_container">
                 {% for photograph in album.photograph_set.all %}
                 <li>
@@ -76,9 +76,9 @@
                 {% endfor %}
                 <li></li>
               </ul>
-            {% else %}
+            <!-- {% else %}
               <p>No photos are available.</p>
-            {% endif %}
+            {% endif %} -->
           </section>
         </article>
       </div>

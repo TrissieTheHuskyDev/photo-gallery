@@ -7,11 +7,12 @@ from . import views
 app_name = 'gallery'
 urlpatterns = [
     # '/gallery/
-    path('', views.index, name='index'),
+    path('', views.IndexView.as_view(), name='index'),
     # '/gallery/1/
-    path('<int:album_id>/', views.album_detail, name='album_detail'),
+    path('<int:pk>/', views.AlbumDetailView.as_view(), name='album_detail'),
     # '/gallery/1/1/'
-    path('<int:album_id>/<int:photo_id>/', views.photo_detail, name='photo_detail'),
+    path('<int:album_id>/<int:pk>/', views.PhotoDetailView.as_view(), name='photo_detail'),
+    # path('<int:album_id>/<int:photo_id>/', views.photo_detail, name='photo_detail'),
     # '/gallery/about
     path('about', views.about, name='about'),
 
