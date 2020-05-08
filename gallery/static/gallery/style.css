@@ -6,7 +6,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Elsie', cursive;
+  font-family: 'Montserrat', sans-serif;
   margin: 0; 
   padding: 0;
 }
@@ -21,16 +21,27 @@ body {
   flex: 1;    /* same as flex-grow: 1; */
   margin:0;
 }
-
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
 .row {
   flex:1;
 }
-a:visited,  a:link,  a:active {
+a, a:visited, a:link, a:active {
   text-decoration: none;
 }
-nav{
-  background: #1d1d1d;
-  padding: 8px;;
+
+nav, footer{
+  background: #000000;
+  padding: 8px;
+}
+nav a, nav a:visited, nav a:link, nav a:active 
+{
+  color:white;
+}
+nav a:hover {
+  border: 1px solid white;
 }
 .nav{
   padding: 1rem;
@@ -38,18 +49,16 @@ nav{
 .navbar-brand{
   margin: 0;
   padding:1rem;
+  color: white;
 }
 .navbar-brand img{
   border-radius: 15%;
 }
-.nav-item a:visited, .nav-item a:link, .nav-item a:active
-{
-  color: white;
-}
-.nav-item a:hover{
+
+/* .nav-item a:hover, nav a:hover{
   color: #ED6A5A;
   text-shadow: 1px 1px 2px black, 0 0 25px rgb(235, 150, 139), 0 0 5px rgb(218, 88, 71);
-}
+} */
 .breadcrumb {
   background: none;
   margin: 0;
@@ -71,8 +80,9 @@ header {
 }
 
 article {
-  background: #F4C7A1;
-}
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+} 
 article nav{
   background: none;
   margin: 0;
@@ -84,11 +94,15 @@ footer {
   display: flex;
   justify-content: left;
   align-items: center;
-  padding: 15px;
-  background: #1d1d1d;
   color:white;
 
   line-height: 1.5;
+}
+footer a, footer a:visited, footer a:link, footer a:active {
+  color:white;
+}
+footer a:hover {
+  border: 1px solid white;
 }
 .ft-main{
   display: flex;
@@ -116,12 +130,7 @@ footer {
   margin: 0.5rem;
   font-size: 1.25rem;
 }
-#email {
-  color: #F4F1BB;
-}
-#email:hover{
-  text-shadow: 1px 1px 2px black, 0 0 25px rgb(241, 237, 158), 0 0 5px rgb(238, 227, 17);
-}
+
 
 
 ul{
@@ -209,6 +218,8 @@ ul{
 .photoreel img {
   flex: 0 0 auto;
 }
+
+
 /* Portrait */
 @media (max-aspect-ratio: 1/1) {
   li {

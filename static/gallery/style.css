@@ -82,6 +82,11 @@ ul{
   transition: 0.5s;
 }
 
+.gradient {
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(158,158,158,1) 28%, rgba(215,215,255,1) 53%, rgba(255,255,255,1) 100%);
+}
+
 /* Portrait */
 @media (max-aspect-ratio: 1/1) {
   li {
