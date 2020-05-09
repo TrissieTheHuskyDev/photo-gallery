@@ -3,8 +3,15 @@
 <!-- CAROUSEL -->
 {% block content %}
 <!-- Carousel -->
-<!-- <div class="row">
-    <section class="container-fluid"> -->
+<!-- <div class="row">-->
+    <nav   aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'gallery:index' %}">Albums</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ album.title }}</li>
+        </ol>
+    </nav>
+    <section class="container-fluid"> 
+
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 {% for photo in prev_photos %}
@@ -48,9 +55,9 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    <!-- </section>
+    </section>
     
-</div> -->
+
 
     <!--Thumbnails-->
     <div class="row">
