@@ -1,10 +1,82 @@
-/* * {
-  box-sizing: border-box;
-} */
-
-/* .container */
-
 * {
+  margin: 0;
+  padding: 0;
+}
+.root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+.flex-column-item{
+  flex-grow: 1;
+}
+
+a, a:visited, a:link, a:active {
+  text-decoration: none;
+  color:white
+}
+ul {
+  list-style: none;
+}
+
+nav, footer, .navbar{
+  background: #000000;
+  color:white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5em;
+}
+nav .nav-item:hover {
+  border: 1px solid white;
+}
+.navbar-brand{
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+.nav-link{
+  padding:0;
+}
+.nav-item {
+  padding: 0.5em 0.5em;
+}
+
+
+.block-content a, .block-content a:visited, .block-content a:link, .block-content a:active {
+  color:black;
+}
+
+
+.ft-info{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ft-info a {
+  padding: 0.5em 0.5em;
+  margin: 0;
+}
+.ft-info a:hover {
+  border: 1px solid white;
+}
+.ft-social-list {
+  display:flex;
+  justify-content: space-between;
+  margin:0;
+}
+.ft-social-list li {
+  padding: 0.5em 0.5em;
+}
+.ft-social-list li:hover {
+  border: 1px solid white;
+}
+
+
+
+/* * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   margin: 0; 
@@ -15,10 +87,9 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  /* flex:1; */
 }
 .container-fluid {
-  flex: 1;    /* same as flex-grow: 1; */
+  flex: 1;   
   margin:0;
 }
 .flex-container {
@@ -55,10 +126,6 @@ nav a:hover {
   border-radius: 15%;
 }
 
-/* .nav-item a:hover, nav a:hover{
-  color: #ED6A5A;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgb(235, 150, 139), 0 0 5px rgb(218, 88, 71);
-} */
 .breadcrumb {
   background: none;
   margin: 0;
@@ -117,7 +184,7 @@ footer a:hover {
   margin: 0;
   padding: 0.50rem;
 }
-/* Footer social */
+
 .ft-social {
   margin-left: auto;
 }
@@ -217,25 +284,25 @@ ul{
 }
 .photoreel img {
   flex: 0 0 auto;
-}
+} */
 
 
 /* Portrait */
-@media (max-aspect-ratio: 1/1) {
+/* @media (max-aspect-ratio: 1/1) {
   li {
     height: 30vh;
   }
-}
+} */
 
 /* Short screens */
-@media (max-height: 480px) {
+/* @media (max-height: 480px) {
   li {
     height: 80vh;
   }
-}
+} */
 
 /* Smaller screens in portrait */
-@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+/* @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
   ul {
     flex-direction: row;
   }
@@ -249,6 +316,4 @@ ul{
     max-height: 75vh;
     min-width: 0;
   }
-}
-
-
+} */
