@@ -2,7 +2,6 @@
 
 <!-- ALBUM IMAGES -->
 {% block content %}
-  <article class="container-fluid">
     <nav   aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{% url 'gallery:index' %}">Albums</a></li>
@@ -12,29 +11,26 @@
     <header>
       <h1>{{album.title}}</h1>
     </header>
-    <section class="container-fluid">
-      <!-- {% if photo_list %} -->
-        <ul id="images_container">
-          {% for photograph in album.photograph_set.all %}
-          <li>
-            <a href="{% url 'gallery:photo_detail' album.id photograph.id %}">
-              <div class="thumbnail">
-                <div class="image_detail">
-                  <h4>{{ photograph.name }}</h4>
-                  <p>Description: {{ photograph.description }}</p>
-                  <p>Taken: {{ photograph.creation_date }}</p>
-                </div>
-                <img class="image" src="/media/{{photograph.photo}}" alt="Album Image" />
+    <!-- {% if photo_list %} -->
+      <ul class="images_container">
+        {% for photograph in album.photograph_set.all %}
+        <li>
+          <a href="{% url 'gallery:photo_detail' album.id photograph.id %}">
+            <div class="thumbnail">
+              <div class="image_detail">
+                <h4>{{ photograph.name }}</h4>
+                <p>Description: {{ photograph.description }}</p>
+                <p>Taken: {{ photograph.creation_date }}</p>
               </div>
-            </a>
-          </li>
-          <br>
-          {% endfor %}
-          <li></li>
-        </ul>
-      <!-- {% else %}
-        <p>No photos are available.</p>
-      {% endif %} -->
-    </section>
-  </article>
+              <img class="image" src="/media/{{photograph.photo}}" alt="Album Image" />
+            </div>
+          </a>
+        </li>
+        <br>
+        {% endfor %}
+        <li></li>
+      </ul>
+    <!-- {% else %}
+      <p>No photos are available.</p>
+    {% endif %} -->
 {% endblock %}  

@@ -14,7 +14,7 @@ class IndexView(generic.ListView):
     context_object_name = 'album_list'
 
     def get_queryset(self):
-        return Album.objects.order_by('-title')
+        return Album.objects.order_by('title')
 
 # def album_detail(request, album_id):
 #     album = get_object_or_404(Album, pk=album_id)

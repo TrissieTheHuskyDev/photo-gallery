@@ -24,21 +24,19 @@
     <div class="root">
 
       <!-- NAVBAR -->
-      <!-- <div class="row "> -->
-        <nav class="navbar flex-column-item">
-            <a class="navbar-brand nav-item" href="{% url 'gallery:index' %}">
-              irie.io images
-            </a>
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link active" href="{% url 'gallery:about' %}">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Buy Prints</a>
-              </li>
-            </ul>
-        </nav>
-      <!-- </div> -->
+      <nav class="navbar flex-column-item">
+          <a class="navbar-brand nav-item" href="{% url 'gallery:index' %}">
+            irie.io images
+          </a>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'gallery:about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Buy Prints</a>
+            </li>
+          </ul>
+      </nav>
       
       <!-- CONTENT -->
       <section class="flex-column-item block-content">
@@ -47,23 +45,21 @@
       </section>
 
       <!-- FOOTER -->
-      <!-- <div class="row"> -->
-        <footer class="flex-column-item">
-          <!-- <section class="ft-main container-fluid"> -->
-            <div class="ft-item ft-info">
-              <a href="{% url 'gallery:index' %}">irie.io images</a>
-              <a href="mailto:ipolo1969@gmail.com" id="email">ipolo1969@gmail.com</a>
-            </div>
-            <!-- SOCIAL BUTTONS -->
-            <div class="ft-item ft-social">
-              <ul class="ft-social-list">
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-github"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-          <!-- </section> -->
-        </footer>
+      <footer class="flex-column-item">
+          <!-- GENERAL -->
+          <div class="ft-item ft-info">
+            <a href="{% url 'gallery:index' %}">irie.io images</a>
+            <a href="mailto:ipolo1969@gmail.com" id="email">ipolo1969@gmail.com</a>
+          </div>
+          <!-- SOCIAL BUTTONS -->
+          <div class="ft-item ft-social">
+            <ul class="ft-social-list">
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-github"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+      </footer>
       <!-- </div> -->
 
     </div>

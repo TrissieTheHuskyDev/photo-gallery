@@ -2,30 +2,29 @@
 
 <!-- ALBUMS -->
 {% block content %}
-  <article class="container-fluid flex-container">
-    <header>
-      <h1>Albums</h1>
-    </header>
-    <section class="container-fluid">
-      {% if album_list %}
-          <ul id="images_container">
-          {% for album in album_list %}
-              <a href="{% url 'gallery:album_detail' album.id %}">
-                <li class="thumbnail">
-                  <div class="image_detail">
-                    <h4>{{ album.title }}</h4>
-                    <!-- <h6>{{ album.description }}</h6> -->
-                  </div>
-                  <!-- <img class="image" src="/media/{{album.thumbnail}}" alt="Album Thumbnail"  /> -->
-                </li>
-              </a>
-              <!-- <br> -->
-          {% endfor %}
-          <li></li>
-          </ul>
-      {% else %}
-          <p>No albums are available.</p>
-      {% endif %}
-    </section>
-  </article>
+  <header class="block-content-item">
+    <h1>Albums</h1>
+  </header>
+  {% if album_list %}
+    <ul class="block-content-item images-container">
+    {% for album in album_list %}
+      <li class="thumbnail">
+        <a href="{% url 'gallery:album_detail' album.id %}">
+            <div class="image-detail">
+              <h4>{{ album.title }}</h4>
+              <!-- <h6>{{ album.description }}</h6> -->
+            </div>
+            <img class="image" src="/media/{{album.thumbnail}}" alt="Album Thumbnail"  />
+        </a>
+      </li>
+        <!-- <br> -->
+    {% endfor %}
+    <!--Note: add more <li></li> if -->
+    <li></li>
+
+    </ul>
+  {% else %}
+      <p>No albums are available.</p>
+  {% endif %}
+ 
 {% endblock %}
