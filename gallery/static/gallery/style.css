@@ -21,7 +21,7 @@ ul {
   list-style: none;
 }
 
-nav, footer, .navbar{
+footer, .navbar{
   background: #000000;
   color:white;
   display: flex;
@@ -46,6 +46,7 @@ nav .nav-item:hover {
 
 
 
+
 .block-content {
   display: flex;
   flex-direction: column;
@@ -63,8 +64,22 @@ nav .nav-item:hover {
   margin: 0;
   padding: 0;
 }
-.block-content header:first-child {
+.block-content header{
   align-self: center;
+}
+
+.breadcrumb {
+  background: none !important;
+  margin: 0;
+}
+.breadcrumb-item a:visited, .breadcrumb-item a:link, .breadcrumb-item a:active {
+  color: #1d1d1d;
+}
+.breadcrumb-item a{
+  padding: 0.5em 0.5em;
+}
+.breadcrumb-item a:hover{
+  border: 1px solid black;
 }
 
 

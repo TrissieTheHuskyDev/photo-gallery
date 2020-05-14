@@ -12,18 +12,16 @@
       <h1>{{album.title}}</h1>
     </header>
     <!-- {% if photo_list %} -->
-      <ul class="images_container">
+      <ul class="images-container">
         {% for photograph in album.photograph_set.all %}
-        <li>
+        <li class="thumbnail">
           <a href="{% url 'gallery:photo_detail' album.id photograph.id %}">
-            <div class="thumbnail">
-              <div class="image_detail">
-                <h4>{{ photograph.name }}</h4>
-                <p>Description: {{ photograph.description }}</p>
-                <p>Taken: {{ photograph.creation_date }}</p>
-              </div>
-              <img class="image" src="/media/{{photograph.photo}}" alt="Album Image" />
+            <div class="image-detail">
+              <h4>{{ photograph.name }}</h4>
+              <p>Description: {{ photograph.description }}</p>
+              <p>Taken: {{ photograph.creation_date }}</p>
             </div>
+            <img class="image" src="/media/{{photograph.photo}}" alt="Album Image" />
           </a>
         </li>
         <br>
