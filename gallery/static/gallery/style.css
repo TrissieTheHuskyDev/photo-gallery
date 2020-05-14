@@ -71,6 +71,7 @@ nav .nav-item:hover {
 .breadcrumb {
   background: none !important;
   margin: 0;
+  padding: 0;
 }
 .breadcrumb-item a:visited, .breadcrumb-item a:link, .breadcrumb-item a:active {
   color: #1d1d1d;

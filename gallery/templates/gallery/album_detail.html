@@ -11,7 +11,7 @@
     <header>
       <h1>{{album.title}}</h1>
     </header>
-    <!-- {% if photo_list %} -->
+    {% if photo_list %}
       <ul class="images-container">
         {% for photograph in album.photograph_set.all %}
         <li class="thumbnail">
@@ -28,7 +28,7 @@
         {% endfor %}
         <li></li>
       </ul>
-    <!-- {% else %}
+    {% else %}
       <p>No photos are available.</p>
-    {% endif %} -->
+    {% endif %}
 {% endblock %}  
