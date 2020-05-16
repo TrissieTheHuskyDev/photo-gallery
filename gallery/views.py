@@ -14,7 +14,7 @@ class IndexView(generic.ListView):
     context_object_name = 'album_list'
 
     def get_queryset(self):
-        return Album.objects.order_by('-title')
+        return Album.objects.order_by('title')
 
 # def album_detail(request, album_id):
 #     album = get_object_or_404(Album, pk=album_id)
@@ -33,7 +33,8 @@ class AlbumDetailView(generic.DetailView):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
-        context['photo_list'] = Photograph.objects.all()
+        self.album = get_object_or_404(Album, id=self.kwargs['pk'])
+        context['photo_list'] = self.album.photograph_set.all()
         return context
 
 # def photo_detail(request, album_id, photo_id):
