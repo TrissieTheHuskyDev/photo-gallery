@@ -6,15 +6,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="description" content="This site displays the photogpraphy work of Irene Polo"
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custom CSS -->
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'gallery/style.css' %}">
     <!-- Google Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Elsie:wght@900&display=swap" rel="stylesheet">  -->
-    <!-- font-family: "termina"," sans-serif;",sans-serif; -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
     <!-- Social Link Icons -->
     <script src="https://kit.fontawesome.com/f25d61f966.js" crossorigin="anonymous"></script> 
@@ -25,7 +23,7 @@
 
       <!-- NAVBAR -->
       <nav class="navbar flex-column-item">
-          <a class="navbar-brand nav-item" href="{% url 'gallery:index' %}">
+          <a class="navbar-brand nav-item" href="{% url 'home' %}">
             irie.io images
           </a>
           <ul class="nav">
@@ -60,7 +58,6 @@
             </ul>
           </div>
       </footer>
-      <!-- </div> -->
 
     </div>
     <!-- Optional JavaScript -->

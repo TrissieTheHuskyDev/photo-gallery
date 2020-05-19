@@ -9,13 +9,50 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+body.homepage, html.homepage {
+  height: 100%;
+  margin: 0;
+}
+.homepage-details {
+  display: flex;
+  flex-direction: column;
+}
+.home-background {
+  padding:70px;
+  background-image: url(./images/home_image.jpg);
+  opacity: 0.85;
+  /* Full height */
+  height: 100%; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: white;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-background h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 110px;
+}
+.home-background a {
+  border-radius: 0%;
+}
+
+
+
 .flex-column-item{
   flex-grow: 1;
 }
 
 a, a:visited, a:link, a:active {
   text-decoration: none;
-  color:white
+  color:black;
 }
 ul {
   list-style: none;
@@ -24,8 +61,8 @@ ul {
 /* Navbar and Footer */
 
 footer, .navbar{
-  background: #000000;
-  color:white;
+  /* background: #000000; */
+  color:black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,12 +72,12 @@ footer, .navbar{
 /* Navbar */
 
 nav .nav-item:hover {
-  border: 1px solid white;
+  border: 1px solid black;
 }
 .navbar-brand{
   padding: 0;
   margin: 0;
-  color: white;
+  /* color: white; */
 }
 .nav-link{
   padding:0;
@@ -56,8 +93,9 @@ nav .nav-item:hover {
   display: flex;
   flex-direction: column;
   padding: 2.5em;
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background: white;
+  /* background: rgb(238,174,202); */
+  /* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
 }
 .block-content a, .block-content a:visited, .block-content a:link, .block-content a:active {
   color:black;
@@ -188,7 +226,7 @@ nav .nav-item:hover {
   margin: 0;
 }
 .ft-info a:hover {
-  border: 1px solid white;
+  border: 1px solid black;
 }
 .ft-social-list {
   display:flex;
@@ -199,7 +237,7 @@ nav .nav-item:hover {
   padding: 0.5em 0.5em;
 }
 .ft-social-list li:hover {
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
 

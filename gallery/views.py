@@ -37,20 +37,6 @@ class AlbumDetailView(generic.DetailView):
         context['photo_list'] = self.album.photograph_set.all()
         return context
 
-# def photo_detail(request, album_id, photo_id):
-#     start_photo = get_object_or_404(Photograph, pk = photo_id)
-#     album = get_object_or_404(Album, pk=album_id)
-#     photo_list = album.photograph_set.exclude(pk=photo_id)
-#     prev_photos = album.photograph_set.filter(pk__lt=photo_id)
-#     next_photos = album.photograph_set.filter(pk__gt=photo_id)
-#     # return render(request, 'gallery/photo_detail.html', {'start_photo': start_photo, 'album':album, 'photo_list':photo_list})
-#     return render(request, 'gallery/photo_detail.html', 
-#     {   'start_photo': start_photo, 
-#         'album':album, 
-#         'photo_list':photo_list,
-#         'prev_photos': prev_photos,
-#         'next_photos': next_photos
-#     })
 
 class PhotoDetailView(generic.DetailView):
     model = Photograph
@@ -70,3 +56,6 @@ class PhotoDetailView(generic.DetailView):
 
 def about(request):
     return render(request, 'gallery/about.html')
+
+def home(request):
+    return render(request, 'gallery/home.html')
