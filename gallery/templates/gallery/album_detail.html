@@ -21,7 +21,7 @@
               <p>Description: {{ photograph.description }}</p>
               <p>Taken: {{ photograph.creation_date }}</p>
             </div>
-            <img class="image" src="/media/{{photograph.photo}}" alt="Album Image" />
+            <img class="image" src="{{photograph.photo.url}}" alt="Album Image" />
           </a>
         </li>
         <br>

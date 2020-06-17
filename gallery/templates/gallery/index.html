@@ -1,5 +1,5 @@
 {% extends 'gallery/base.html' %}
-
+{% load thumbnail %}
 <!-- ALBUMS -->
 {% block content %}
   <header class="block-content-item">
@@ -14,7 +14,8 @@
               <h4>{{ album.title }}</h4>
               <!-- <h6>{{ album.description }}</h6> -->
             </div>
-            <img class="image" src="/media/{{album.thumbnail}}" alt="Album Thumbnail"  />
+            <img class="image" src="{{album.thumbnail.url}}" alt="Album Thumbnail"  />
+            <!-- <img class="image" src="{% thumbnail album.thumbnail '1920' as im %}{{ im.url }}{% endthumbnail %}" alt="Album Thumbnail"  /> -->
         </a>
       </li>
         <!-- <br> -->

@@ -47,6 +47,7 @@ OTHER_APPS = [
     'bootstrap4',
     'django_filters',
     'rest_framework',
+    'sorl.thumbnail',
 ]
 
 INSTALLED_APPS = [
@@ -149,4 +150,4 @@ STATICFILES_DIR = [
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

@@ -14,7 +14,7 @@
     <div class="carousel-inner">
         {% for photo in prev_photos %}
         <div class="carousel-item">
-            <img class="d-block w-100" src="/media/{{photo.photo}}" alt="First slide">
+            <img class="d-block w-100" src="{{photo.photo.url}}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
                 <h5>{{photo.name}}</h5>
                 <p>{{photo.description}}</p>
@@ -24,7 +24,7 @@
         {% endfor %}
 
         <div class="carousel-item active">
-            <img class="d-block w-100" src="/media/{{start_photo.photo}}" alt="First slide">
+            <img class="d-block w-100" src="{{start_photo.photo.url}}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
                 <h5>{{start_photo.name}}</h5>
                 <p>{{start_photo.description}}</p>
@@ -34,7 +34,7 @@
 
         {% for photo in next_photos %}
         <div class="carousel-item">
-            <img class="d-block w-100" src="/media/{{photo.photo}}" alt="First slide">
+            <img class="d-block w-100" src="{{photo.photo.url}}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
                 <h5>{{photo.name}}</h5>
                 <p>{{photo.description}}</p>
