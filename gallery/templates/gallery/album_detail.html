@@ -1,5 +1,5 @@
 {% extends 'gallery/base.html' %}
-
+{% load thumbnail %}
 <!-- ALBUM IMAGES -->
 {% block content %}
     <nav   aria-label="breadcrumb">
@@ -21,7 +21,18 @@
               <p>Description: {{ photograph.description }}</p>
               <p>Taken: {{ photograph.creation_date }}</p>
             </div>
-            <img class="image" src="{{photograph.photo.url}}" alt="Album Image" />
+            <!-- <img class="image" src="{{photograph.photo.url}}" alt="Album Image" /> -->
+            <img 
+                class="image" 
+                src="{% thumbnail photograph.photo '1920' as im %}{{ im.url }}{% endthumbnail %}"
+                srcset="{% thumbnail photograph.photo '544' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                        {% thumbnail photograph.photo '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                        {% thumbnail photograph.photo '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                        {% thumbnail photograph.photo '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                        {% thumbnail photograph.photo '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+                alt="Album Image"
+                sizes="100vw"  
+            />
           </a>
         </li>
         <br>

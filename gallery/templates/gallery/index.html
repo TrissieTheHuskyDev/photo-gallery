@@ -15,7 +15,18 @@
               <!-- <h6>{{ album.description }}</h6> -->
             </div>
             <!-- <img class="image" src="{{album.thumbnail.url}}" alt="Album Thumbnail"  /> -->
-            <img class="image" src="{% thumbnail album.thumbnail '1920' as im %}{{ im.url }}{% endthumbnail %}" alt="Album Thumbnail"  />
+            <img 
+                class="image" 
+                src="{% thumbnail album.thumbnail '1920' as im %}{{ im.url }}{% endthumbnail %}"
+                srcset="{% thumbnail album.thumbnail '544' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                        {% thumbnail album.thumbnail '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                        {% thumbnail album.thumbnail '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                        {% thumbnail album.thumbnail '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+                        {% thumbnail album.thumbnail '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+                alt="Album Thumbnail"
+                sizes="100vw"  
+            />
+            
         </a>
       </li>
         <!-- <br> -->
